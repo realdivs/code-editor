@@ -5,7 +5,7 @@ import "./styles.css";
 const CodeEditor = () => {
   const [code, setCode] = useState("");
   const editorRef = useRef();
-  const linkRef = useRef();
+  const lineRef = useRef();
 
   const handleScroll = () => {
     lineRef.current.scrollTop = editorRef.current.scrollTop;
@@ -17,7 +17,7 @@ const CodeEditor = () => {
 
   return (
     <div className="editor-container">
-      <div className="line-numbers" ref={linkRef}>
+      <div className="line-numbers" ref={lineRef}>
         <LineNumbers code={code} />
       </div>
       <textarea
